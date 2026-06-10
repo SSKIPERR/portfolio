@@ -27,16 +27,15 @@ npx serve .
 
 и открыть http://localhost:8000
 
-## Как опубликовать на GitHub Pages (бесплатный хостинг)
+## Публикация (GitHub Pages)
 
-1. Слей эту ветку в `main` (или работай сразу в `main`).
-2. На GitHub открой **Settings → Pages**.
-3. В разделе **Build and deployment** выбери: Source — `Deploy from a branch`,
-   Branch — `main`, папка — `/ (root)`. Нажми **Save**.
-4. Через 1–2 минуты сайт будет доступен по адресу
-   `https://sskiperr.github.io/portfolio/`.
+Сайт публикуется автоматически: workflow
+`.github/workflows/deploy-pages.yml` деплоит его на GitHub Pages при каждом
+пуше в ветку по умолчанию (а также в `main`, если переедешь на неё).
+Адрес сайта: **https://sskiperr.github.io/portfolio/**
 
-Свой домен (например `davidmargaryan.dev`) подключается там же, в Settings → Pages.
+Статус деплоя виден во вкладке **Actions** на GitHub. Свой домен
+(например `davidmargaryan.dev`) подключается в Settings → Pages.
 
 ## Что заменить под себя (чек-лист)
 
