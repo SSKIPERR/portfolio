@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Давид Маргарян — Frontend & Fullstack разработчик</title>
+  <meta name="description" content="Портфолио Давида Маргаряна: разработка сайтов и веб-приложений под ключ, UI/UX-дизайн. Быстро, аккуратно, в срок.">
+  <meta name="theme-color" content="#06060b">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Давид Маргарян — Frontend & Fullstack разработчик">
+  <meta property="og:description" content="Сайты, веб-приложения и UI/UX-дизайн под ключ — от идеи до запуска.">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.replace('no-js','js');</script>
+</head>
+<body id="top">
+
+  <!-- Scroll progress -->
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <!-- Decorative background -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg__grid"></div>
+    <div class="bg__blob bg__blob--1"></div>
+    <div class="bg__blob bg__blob--2"></div>
+    <div class="bg__noise"></div>
+  </div>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="navbar">
+    <div class="container nav__inner">
+      <a href="#top" class="logo" aria-label="David Margaryan — home">
+        <span class="logo__mark">DM</span>
+        <span class="logo__text">David&nbsp;Margaryan</span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Основная навигация">
+        <a href="#about" class="nav__link" data-i18n="nav.about">Обо мне</a>
+        <a href="#services" class="nav__link" data-i18n="nav.services">Услуги</a>
+        <a href="#skills" class="nav__link" data-i18n="nav.skills">Навыки</a>
+        <a href="#projects" class="nav__link" data-i18n="nav.projects">Проекты</a>
+        <a href="#contact" class="nav__link" data-i18n="nav.contact">Контакты</a>
+        <a href="#contact" class="btn btn--primary btn--sm nav__cta" data-i18n="nav.cta">Обсудить проект</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">EN</button>
+        <button class="burger" id="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="hero__badge"><i class="dot"></i><span data-i18n="hero.badge">Открыт для новых проектов</span></span>
+          <p class="hero__eyebrow" data-i18n="hero.eyebrow">Привет, меня зовут</p>
+          <h1 class="hero__name" data-i18n="hero.name">Давид Маргарян</h1>
+          <div class="hero__role" aria-live="polite">
+            <span class="hero__role-typed" id="typed">Frontend-разработчик</span><span class="hero__cursor" aria-hidden="true">|</span>
+          </div>
+          <p class="hero__sub" data-i18n="hero.sub">Помогаю бизнесу и стартапам превращать идеи в быстрые, удобные и красивые веб-продукты — от прототипа до запуска.</p>
+
+          <div class="hero__cta">
+            <a href="#contact" class="btn btn--primary" data-i18n="hero.cta1">Обсудить проект</a>
+            <a href="#projects" class="btn btn--ghost" data-i18n="hero.cta2">Смотреть работы</a>
+          </div>
+
+          <div class="hero__socials">
+            <a href="https://github.com/sskiperr" target="_blank" rel="noopener" class="social" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.26 5.66.41.36.78 1.06.78 2.14 0 1.54-.01 2.78-.01 3.16 0 .31.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+            </a>
+            <a href="mailto:davidmargaryan200620@gmail.com" class="social" aria-label="Email">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 7 9-7"/></svg>
+            </a>
+            <!-- Telegram: раскомментируй и впиши свой ник
+            <a href="https://t.me/your_username" target="_blank" rel="noopener" class="social" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M21.9 4.1c.3-1.2-.6-1.9-1.7-1.5L2.7 9.3c-1.2.5-1.2 1.6-.2 1.9l4.5 1.4 10.4-6.6c.5-.3 1-.1.6.2l-8.4 7.6-.3 4.6c.5 0 .7-.2 1-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3-14.3z"/></svg>
+            </a>
+            -->
+          </div>
+        </div>
+
+        <div class="hero__stats" data-stagger>
+          <div class="stat reveal">
+            <span class="stat__num" data-count="2" data-suffix="+">0+</span>
+            <span class="stat__label" data-i18n="hero.stat1">года в разработке</span>
+          </div>
+          <div class="stat reveal">
+            <span class="stat__num" data-count="15" data-suffix="+">0+</span>
+            <span class="stat__label" data-i18n="hero.stat2">реализованных проектов</span>
+          </div>
+          <div class="stat reveal">
+            <span class="stat__num" data-count="3" data-suffix="">0</span>
+            <span class="stat__label" data-i18n="hero.stat3">направления работы</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="hero__scroll" aria-label="Scroll down">
+        <span class="hero__scroll-text" data-i18n="hero.scroll">Листай вниз</span>
+        <span class="hero__scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- ===================== MARQUEE ===================== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>React</span><i>✦</i><span>TypeScript</span><i>✦</i><span>Next.js</span><i>✦</i><span>Node.js</span><i>✦</i><span>Figma</span><i>✦</i><span>Tailwind CSS</span><i>✦</i><span>PostgreSQL</span><i>✦</i><span>UI/UX</span><i>✦</i><span>REST API</span><i>✦</i><span>Git</span><i>✦</i>
+        <span>React</span><i>✦</i><span>TypeScript</span><i>✦</i><span>Next.js</span><i>✦</i><span>Node.js</span><i>✦</i><span>Figma</span><i>✦</i><span>Tailwind CSS</span><i>✦</i><span>PostgreSQL</span><i>✦</i><span>UI/UX</span><i>✦</i><span>REST API</span><i>✦</i><span>Git</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-label" data-i18n="about.label">01 · Обо мне</span>
+          <h2 class="sec-title" data-i18n="about.title">Разработчик, который думает как дизайнер</h2>
+        </div>
+
+        <div class="about">
+          <div class="about__visual reveal">
+            <div class="avatar">
+              <div class="avatar__ring"></div>
+              <div class="avatar__core">DM</div>
+              <span class="avatar__chip avatar__chip--1">React</span>
+              <span class="avatar__chip avatar__chip--2">Figma</span>
+              <span class="avatar__chip avatar__chip--3">Node.js</span>
+            </div>
+          </div>
+
+          <div class="about__text">
+            <p class="reveal" data-i18n="about.p1">Меня зовут Давид. Я занимаюсь веб-разработкой и дизайном интерфейсов: умею не только написать чистый код, но и продумать логику, структуру и внешний вид продукта.</p>
+            <p class="reveal" data-i18n="about.p2">Для меня хороший сайт — это не просто «красиво». Это скорость загрузки, удобство на телефоне, понятный путь пользователя и дизайн, который работает на цель бизнеса. Поэтому каждый проект я веду от идеи до результата.</p>
+
+            <div class="about__facts" data-stagger>
+              <div class="fact reveal">
+                <span class="fact__title" data-i18n="about.f1t">Удалённо</span>
+                <span class="fact__desc" data-i18n="about.f1d">работаю с любым часовым поясом</span>
+              </div>
+              <div class="fact reveal">
+                <span class="fact__title" data-i18n="about.f2t">Сроки</span>
+                <span class="fact__desc" data-i18n="about.f2d">фиксирую заранее и соблюдаю</span>
+              </div>
+              <div class="fact reveal">
+                <span class="fact__title" data-i18n="about.f3t">Связь</span>
+                <span class="fact__desc" data-i18n="about.f3d">на связи каждый день, отчёты о прогрессе</span>
+              </div>
+            </div>
+
+            <a href="#contact" class="btn btn--ghost reveal" data-i18n="about.cta">Написать мне</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICES ===================== -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-label" data-i18n="services.label">02 · Услуги</span>
+          <h2 class="sec-title" data-i18n="services.title">Чем я могу быть полезен</h2>
+        </div>
+
+        <div class="services" data-stagger>
+          <article class="service reveal">
+            <div class="service__icon service__icon--vio">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 20h8"/></svg>
+            </div>
+            <h3 class="service__title" data-i18n="svc1.title">Сайты под ключ</h3>
+            <p class="service__desc" data-i18n="svc1.desc">Лендинги, корпоративные сайты и магазины: от структуры и дизайна до публикации в интернете.</p>
+            <ul class="service__list">
+              <li data-i18n="svc1.li1">Адаптивная вёрстка под все экраны</li>
+              <li data-i18n="svc1.li2">Анимации и интерактив</li>
+              <li data-i18n="svc1.li3">SEO-база и быстрая загрузка</li>
+            </ul>
+          </article>
+
+          <article class="service reveal">
+            <div class="service__icon service__icon--cyan">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M13 5l-2 14"/></svg>
+            </div>
+            <h3 class="service__title" data-i18n="svc2.title">Веб-приложения</h3>
+            <p class="service__desc" data-i18n="svc2.desc">Личные кабинеты, дашборды и SaaS-сервисы: фронтенд, бэкенд и база данных в одних руках.</p>
+            <ul class="service__list">
+              <li data-i18n="svc2.li1">REST API и интеграции</li>
+              <li data-i18n="svc2.li2">Авторизация и роли пользователей</li>
+              <li data-i18n="svc2.li3">База данных и админ-панель</li>
+            </ul>
+          </article>
+
+          <article class="service reveal">
+            <div class="service__icon service__icon--pink">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/></svg>
+            </div>
+            <h3 class="service__title" data-i18n="svc3.title">UI/UX-дизайн</h3>
+            <p class="service__desc" data-i18n="svc3.desc">Дизайн, которым удобно пользоваться и который легко превратить в код.</p>
+            <ul class="service__list">
+              <li data-i18n="svc3.li1">Прототипы и вайрфреймы в Figma</li>
+              <li data-i18n="svc3.li2">Дизайн-системы и UI-киты</li>
+              <li data-i18n="svc3.li3">Редизайн и аудит юзабилити</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-label" data-i18n="skills.label">03 · Навыки</span>
+          <h2 class="sec-title" data-i18n="skills.title">Мой стек</h2>
+        </div>
+
+        <div class="skills" data-stagger>
+          <div class="skill-group reveal">
+            <h3 class="skill-group__title"><span class="skill-group__dot skill-group__dot--vio"></span>Frontend</h3>
+            <ul class="chips">
+              <li>HTML5</li><li>CSS3 / SCSS</li><li>JavaScript (ES6+)</li><li>TypeScript</li><li>React</li><li>Next.js</li><li>Tailwind CSS</li><li>Vite</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3 class="skill-group__title"><span class="skill-group__dot skill-group__dot--cyan"></span>Backend</h3>
+            <ul class="chips">
+              <li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>MongoDB</li><li>REST API</li><li>Firebase</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3 class="skill-group__title"><span class="skill-group__dot skill-group__dot--pink"></span><span data-i18n="skills.design">Дизайн</span></h3>
+            <ul class="chips">
+              <li>Figma</li><li data-i18n="skills.proto">Прототипирование</li><li data-i18n="skills.ds">Дизайн-системы</li><li>UI-Kit</li><li>Photoshop</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3 class="skill-group__title"><span class="skill-group__dot skill-group__dot--amber"></span><span data-i18n="skills.tools">Инструменты</span></h3>
+            <ul class="chips">
+              <li>Git / GitHub</li><li>npm / pnpm</li><li>Docker</li><li>Postman</li><li>Linux</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-label" data-i18n="projects.label">04 · Проекты</span>
+          <h2 class="sec-title" data-i18n="projects.title">Избранные работы</h2>
+          <p class="sec-note" data-i18n="projects.note">Это демо-кейсы: концепты, которые показывают мой подход и качество. Скоро здесь появятся боевые проекты — возможно, ваш.</p>
+        </div>
+
+        <div class="filters reveal" role="group" aria-label="Фильтр проектов">
+          <button class="filter-btn is-active" type="button" data-filter="all" data-i18n="filters.all">Все</button>
+          <button class="filter-btn" type="button" data-filter="site" data-i18n="filters.site">Сайты</button>
+          <button class="filter-btn" type="button" data-filter="app" data-i18n="filters.app">Приложения</button>
+          <button class="filter-btn" type="button" data-filter="design" data-i18n="filters.design">UI/UX</button>
+        </div>
+
+        <div class="projects" id="projectsGrid" data-stagger>
+
+          <!-- 1. Aurora Store -->
+          <article class="project reveal" data-cat="app">
+            <div class="project__preview project__preview--vio">
+              <span class="project__concept" data-i18n="projects.concept">Концепт</span>
+              <div class="mock">
+                <div class="mock__bar"><i></i><i></i><i></i></div>
+                <div class="mock__body mock__body--store">
+                  <div class="ms-nav"></div>
+                  <div class="ms-hero"></div>
+                  <div class="ms-row"><div class="ms-card"></div><div class="ms-card"></div><div class="ms-card"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="project__info">
+              <span class="project__kind" data-i18n="p1.kind">Интернет-магазин</span>
+              <h3 class="project__title">Aurora Store</h3>
+              <p class="project__desc" data-i18n="p1.desc">Магазин электроники: каталог с фильтрами, корзина, онлайн-оплата и админ-панель.</p>
+              <div class="project__tags"><span>React</span><span>Node.js</span><span>Stripe</span></div>
+              <a class="project__link" href="https://github.com/sskiperr" target="_blank" rel="noopener"><span data-i18n="projects.more">Подробнее</span> <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <!-- 2. Pulse -->
+          <article class="project reveal" data-cat="app">
+            <div class="project__preview project__preview--cyan">
+              <span class="project__concept" data-i18n="projects.concept">Концепт</span>
+              <div class="mock">
+                <div class="mock__bar"><i></i><i></i><i></i></div>
+                <div class="mock__body mock__body--dash">
+                  <div class="md-side"></div>
+                  <div class="md-main">
+                    <div class="md-chips"><i></i><i></i></div>
+                    <div class="md-chart"><b style="--h:40%"></b><b style="--h:70%"></b><b style="--h:55%"></b><b style="--h:90%"></b><b style="--h:65%"></b></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project__info">
+              <span class="project__kind" data-i18n="p2.kind">SaaS-дашборд</span>
+              <h3 class="project__title">Pulse Analytics</h3>
+              <p class="project__desc" data-i18n="p2.desc">Аналитика в реальном времени: графики, отчёты, экспорт данных и командный доступ.</p>
+              <div class="project__tags"><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span></div>
+              <a class="project__link" href="https://github.com/sskiperr" target="_blank" rel="noopener"><span data-i18n="projects.more">Подробнее</span> <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <!-- 3. Brew & Beans -->
+          <article class="project reveal" data-cat="site">
+            <div class="project__preview project__preview--amber">
+              <span class="project__concept" data-i18n="projects.concept">Концепт</span>
+              <div class="mock">
+                <div class="mock__bar"><i></i><i></i><i></i></div>
+                <div class="mock__body mock__body--landing">
+                  <div class="ml-circle"></div>
+                  <div class="ml-line ml-line--1"></div>
+                  <div class="ml-line ml-line--2"></div>
+                  <div class="ml-btn"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project__info">
+              <span class="project__kind" data-i18n="p3.kind">Лендинг</span>
+              <h3 class="project__title">Brew &amp; Beans</h3>
+              <p class="project__desc" data-i18n="p3.desc">Сайт сети кофеен: сочные анимации, меню, карта и онлайн-бронирование столиков.</p>
+              <div class="project__tags"><span>HTML</span><span>SCSS</span><span>GSAP</span></div>
+              <a class="project__link" href="https://github.com/sskiperr" target="_blank" rel="noopener"><span data-i18n="projects.more">Подробнее</span> <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <!-- 4. TaskFlow -->
+          <article class="project reveal" data-cat="app">
+            <div class="project__preview project__preview--green">
+              <span class="project__concept" data-i18n="projects.concept">Концепт</span>
+              <div class="mock">
+                <div class="mock__bar"><i></i><i></i><i></i></div>
+                <div class="mock__body mock__body--kanban">
+                  <div class="mk-col"><i></i><i></i><i></i></div>
+                  <div class="mk-col"><i></i><i></i></div>
+                  <div class="mk-col"><i></i><i></i><i></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="project__info">
+              <span class="project__kind" data-i18n="p4.kind">Веб-приложение</span>
+              <h3 class="project__title">TaskFlow</h3>
+              <p class="project__desc" data-i18n="p4.desc">Канбан для команд: доски, дедлайны, уведомления и совместная работа в реальном времени.</p>
+              <div class="project__tags"><span>React</span><span>Express</span><span>MongoDB</span></div>
+              <a class="project__link" href="https://github.com/sskiperr" target="_blank" rel="noopener"><span data-i18n="projects.more">Подробнее</span> <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <!-- 5. Fitly -->
+          <article class="project reveal" data-cat="design">
+            <div class="project__preview project__preview--pink">
+              <span class="project__concept" data-i18n="projects.concept">Концепт</span>
+              <div class="mock mock--phone">
+                <div class="mp-phone">
+                  <div class="mp-notch"></div>
+                  <div class="mp-screen">
+                    <div class="mp-line"></div>
+                    <div class="mp-ring"></div>
+                    <div class="mp-dots"><i></i><i></i><i></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project__info">
+              <span class="project__kind" data-i18n="p5.kind">Мобильный UI/UX</span>
+              <h3 class="project__title">Fitly</h3>
+              <p class="project__desc" data-i18n="p5.desc">Дизайн фитнес-приложения: 40+ экранов, дизайн-система и кликабельный прототип.</p>
+              <div class="project__tags"><span>Figma</span><span>UI-Kit</span><span>Prototype</span></div>
+              <a class="project__link" href="https://github.com/sskiperr" target="_blank" rel="noopener"><span data-i18n="projects.more">Подробнее</span> <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <!-- 6. Estate One -->
+          <article class="project reveal" data-cat="site">
+            <div class="project__preview project__preview--blue">
+              <span class="project__concept" data-i18n="projects.concept">Концепт</span>
+              <div class="mock">
+                <div class="mock__bar"><i></i><i></i><i></i></div>
+                <div class="mock__body mock__body--estate">
+                  <div class="me-search"></div>
+                  <div class="me-row"><div class="me-card"><i></i><b></b></div><div class="me-card"><i></i><b></b></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="project__info">
+              <span class="project__kind" data-i18n="p6.kind">Корпоративный сайт</span>
+              <h3 class="project__title">Estate One</h3>
+              <p class="project__desc" data-i18n="p6.desc">Сайт агентства недвижимости: каталог объектов, умные фильтры и формы заявок.</p>
+              <div class="project__tags"><span>Next.js</span><span>Tailwind</span><span>Maps API</span></div>
+              <a class="project__link" href="https://github.com/sskiperr" target="_blank" rel="noopener"><span data-i18n="projects.more">Подробнее</span> <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROCESS ===================== -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-label" data-i18n="process.label">05 · Процесс</span>
+          <h2 class="sec-title" data-i18n="process.title">Как мы будем работать</h2>
+        </div>
+
+        <ol class="steps" data-stagger>
+          <li class="step reveal">
+            <span class="step__num">01</span>
+            <h3 class="step__title" data-i18n="st1.t">Бриф и оценка</h3>
+            <p class="step__desc" data-i18n="st1.d">Обсуждаем задачу и цели, фиксируем объём, сроки и стоимость. Бесплатно.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">02</span>
+            <h3 class="step__title" data-i18n="st2.t">Прототип и дизайн</h3>
+            <p class="step__desc" data-i18n="st2.d">Собираю прототип в Figma и согласовываю с вами каждый экран до старта кода.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">03</span>
+            <h3 class="step__title" data-i18n="st3.t">Разработка</h3>
+            <p class="step__desc" data-i18n="st3.d">Пишу чистый код и показываю промежуточный результат каждые 2–3 дня.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">04</span>
+            <h3 class="step__title" data-i18n="st4.t">Запуск и поддержка</h3>
+            <p class="step__desc" data-i18n="st4.d">Деплой, тесты на всех устройствах, передача исходников и 14 дней правок бесплатно.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-label" data-i18n="contact.label">06 · Контакты</span>
+          <h2 class="sec-title" data-i18n="contact.title">Есть идея? Обсудим!</h2>
+          <p class="sec-note" data-i18n="contact.sub">Расскажите о проекте — отвечу в течение дня, помогу с оценкой и предложу решение.</p>
+        </div>
+
+        <div class="contact">
+          <form class="contact__form reveal" id="contactForm" novalidate>
+            <div class="field">
+              <label for="cName" data-i18n="form.name">Ваше имя</label>
+              <input type="text" id="cName" name="name" autocomplete="name" data-i18n-ph="form.namePh" placeholder="Иван">
+            </div>
+            <div class="field">
+              <label for="cEmail">Email</label>
+              <input type="email" id="cEmail" name="email" autocomplete="email" placeholder="ivan@example.com">
+            </div>
+            <div class="field">
+              <label for="cMsg" data-i18n="form.msg">О проекте</label>
+              <textarea id="cMsg" name="message" rows="5" data-i18n-ph="form.msgPh" placeholder="Коротко о проекте: что нужно, сроки, бюджет…"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full" data-i18n="form.send">Отправить</button>
+            <p class="contact__hint" data-i18n="form.hint">Кнопка откроет ваш почтовый клиент с готовым письмом.</p>
+          </form>
+
+          <aside class="contact__direct reveal">
+            <p class="contact__or" data-i18n="contact.or">или напишите напрямую</p>
+
+            <div class="contact__item">
+              <span class="contact__item-label">Email</span>
+              <div class="contact__item-row">
+                <a href="mailto:davidmargaryan200620@gmail.com" class="contact__item-value">davidmargaryan200620@gmail.com</a>
+                <button class="copy-btn" id="copyEmail" type="button" data-i18n-aria="contact.copy" aria-label="Скопировать email">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="contact__item">
+              <span class="contact__item-label">GitHub</span>
+              <div class="contact__item-row">
+                <a href="https://github.com/sskiperr" target="_blank" rel="noopener" class="contact__item-value">github.com/sskiperr</a>
+              </div>
+            </div>
+
+            <!-- Telegram: раскомментируй и впиши свой ник
+            <div class="contact__item">
+              <span class="contact__item-label">Telegram</span>
+              <div class="contact__item-row">
+                <a href="https://t.me/your_username" target="_blank" rel="noopener" class="contact__item-value">@your_username</a>
+              </div>
+            </div>
+            -->
+
+            <div class="contact__avail">
+              <i class="dot"></i>
+              <span data-i18n="contact.avail">Сейчас открыт для заказов</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#top" class="logo" aria-label="Наверх">
+        <span class="logo__mark">DM</span>
+        <span class="logo__text">David&nbsp;Margaryan</span>
+      </a>
+      <p class="footer__tagline" data-i18n="footer.tagline">Открыт к интересным проектам и сотрудничеству</p>
+      <nav class="footer__nav" aria-label="Футер">
+        <a href="#about" data-i18n="nav.about">Обо мне</a>
+        <a href="#services" data-i18n="nav.services">Услуги</a>
+        <a href="#projects" data-i18n="nav.projects">Проекты</a>
+        <a href="#contact" data-i18n="nav.contact">Контакты</a>
+      </nav>
+      <p class="footer__copy">© <span id="year">2026</span> David Margaryan · <span data-i18n="footer.rights">Все права защищены</span></p>
+    </div>
+  </footer>
+
+  <!-- To top -->
+  <button class="to-top" id="toTop" type="button" data-i18n-aria="footer.top" aria-label="Наверх">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 19V5m-6 6 6-6 6 6"/></svg>
+  </button>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
