@@ -1595,13 +1595,13 @@ body {
 .photo-card img {
   width: 100%;
   height: auto;
-  aspect-ratio: 1110 / 683;
+  aspect-ratio: 1110 / 708;
   object-fit: cover;
 }
 
 .photo-fallback {
   display: none;
-  aspect-ratio: 1110 / 683;
+  aspect-ratio: 1110 / 708;
   flex-direction: column;
   align-items: center;
   justify-content: center;
