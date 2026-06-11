@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты — Давид Маргарян</title>
+  <meta name="description" content="Связаться с Давидом Маргаряном: обсудить проект, получить оценку и сроки. Ответ в течение дня.">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Контакты — Давид Маргарян">
+  <meta property="og:description" content="Обсудить проект, получить оценку и сроки. Ответ в течение дня.">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.replace('no-js','js');</script>
+</head>
+<body data-title-key="meta.title.contact" data-desc-key="meta.desc.contact">
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="navbar">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="David Margaryan — home">David Margaryan</a>
+
+      <nav class="nav__links" aria-label="Основная навигация">
+        <a href="about.html" class="nav__link" data-i18n="nav.about">Обо мне</a>
+        <a href="index.html#services" class="nav__link" data-i18n="nav.services">Услуги</a>
+        <a href="projects.html" class="nav__link" data-i18n="nav.projects">Проекты</a>
+        <a href="index.html#process" class="nav__link" data-i18n="nav.process">Подход</a>
+        <a href="contact.html" class="nav__link current" aria-current="page" data-i18n="nav.contact">Контакты</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="lang-toggle lang-toggle--short" type="button" aria-label="Switch language">EN</button>
+        <a href="contact.html" class="nav__cta" data-i18n="nav.cta">Связаться</a>
+        <button class="burger" id="burger" type="button" aria-label="Меню" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="menu" id="mobileMenu">
+    <nav class="menu__links" aria-label="Мобильное меню">
+      <a href="about.html" class="menu__link" data-i18n="nav.about">Обо мне</a>
+      <a href="index.html#services" class="menu__link" data-i18n="nav.services">Услуги</a>
+      <a href="projects.html" class="menu__link" data-i18n="nav.projects">Проекты</a>
+      <a href="index.html#process" class="menu__link" data-i18n="nav.process">Подход</a>
+      <a href="contact.html" class="menu__link" data-i18n="nav.contact">Контакты</a>
+    </nav>
+    <button class="lang-toggle menu__lang" type="button">English</button>
+  </div>
+
+  <main>
+    <!-- ===================== CONTACT HERO ===================== -->
+    <section class="contact chero">
+      <div class="container">
+        <h1 class="contact__title" data-i18n="ct.title">Сделаем что-то отличное.</h1>
+        <p class="contact__sub" data-i18n="ct.sub">Расскажите о задаче — отвечу в течение дня.</p>
+
+        <div class="contact__actions">
+          <a class="btn-blue" href="mailto:davidmargaryan200620@gmail.com" data-i18n="ct.btn">Написать мне</a>
+        </div>
+
+        <div class="contact__row">
+          <span class="contact__email">davidmargaryan200620@gmail.com</span>
+          <button class="link-arrow link-arrow--sm" id="copyEmail" type="button" data-i18n="ct.copy">Скопировать email</button>
+          <a class="link-arrow link-arrow--sm" href="https://github.com/sskiperr" target="_blank" rel="noopener">GitHub</a>
+          <!-- Telegram: раскомментируй и впиши свой ник
+          <a class="link-arrow link-arrow--sm" href="https://t.me/your_username" target="_blank" rel="noopener">Telegram</a>
+          -->
+        </div>
+
+        <p class="chero__note"><span class="avail-dot" aria-hidden="true"></span> <span data-i18n="ct.avail">Сейчас открыт для новых заказов</span></p>
+      </div>
+    </section>
+
+    <!-- ===================== WHAT TO WRITE ===================== -->
+    <section class="section section--gray">
+      <div class="container">
+        <div class="sec-head reveal">
+          <p class="sec-label" data-i18n="hint.label">Подсказка</p>
+          <h2 class="sec-title" data-i18n="hint.title">Что написать в письме.</h2>
+        </div>
+        <ol class="steps steps--three" data-stagger>
+          <li class="step reveal">
+            <span class="step__num">01</span>
+            <h3 class="step__title" data-i18n="hint1.t">Задача</h3>
+            <p class="step__desc" data-i18n="hint1.d">Что нужно сделать и зачем: сайт, приложение, дизайн.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">02</span>
+            <h3 class="step__title" data-i18n="hint2.t">Ориентиры</h3>
+            <p class="step__desc" data-i18n="hint2.d">Примеры, которые нравятся, — или просто «сделай как чувствуешь».</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">03</span>
+            <h3 class="step__title" data-i18n="hint3.t">Сроки и бюджет</h3>
+            <p class="step__desc" data-i18n="hint3.d">Хотя бы примерно — так я сразу предложу реалистичный план.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="section">
+      <div class="container faq">
+        <div class="sec-head reveal">
+          <p class="sec-label">FAQ</p>
+          <h2 class="sec-title" data-i18n="faq.title">Частые вопросы.</h2>
+        </div>
+
+        <div class="faq__list reveal">
+          <details class="faq__item">
+            <summary data-i18n="faq.q1">Сколько стоит сайт?</summary>
+            <p data-i18n="faq.a1">Зависит от объёма: лендинг, корпоративный сайт и веб-приложение — это разные задачи. После короткого брифа дам точную смету — бесплатно и без обязательств.</p>
+          </details>
+          <details class="faq__item">
+            <summary data-i18n="faq.q2">Какие сроки?</summary>
+            <p data-i18n="faq.a2">Лендинг — от одной недели, корпоративный сайт — две-три недели, веб-приложение — от месяца. Сроки фиксируем до старта, и я их соблюдаю.</p>
+          </details>
+          <details class="faq__item">
+            <summary data-i18n="faq.q3">Как проходит оплата?</summary>
+            <p data-i18n="faq.a3">Поэтапно: часть до старта, остальное — после сдачи. Так безопасно для обеих сторон.</p>
+          </details>
+          <details class="faq__item">
+            <summary data-i18n="faq.q4">Что нужно от меня?</summary>
+            <p data-i18n="faq.a4">Описание задачи и материалы, если они есть: тексты, логотип, примеры. Всё остальное — структуру, дизайн, тексты-заглушки — беру на себя.</p>
+          </details>
+          <details class="faq__item">
+            <summary data-i18n="faq.q5">Будут ли правки после запуска?</summary>
+            <p data-i18n="faq.a5">Да: 14 дней правок после сдачи — бесплатно. Дальше — поддержка по договорённости.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__note"><span data-i18n="foot.open">Открыт к новым проектам и сотрудничеству.</span> <span data-i18n="foot.made">Сайт сделан вручную — без шаблонов и конструкторов.</span></p>
+      <nav class="footer__nav" aria-label="Футер">
+        <a href="about.html" data-i18n="nav.about">Обо мне</a>
+        <a href="index.html#services" data-i18n="nav.services">Услуги</a>
+        <a href="projects.html" data-i18n="nav.projects">Проекты</a>
+        <a href="contact.html" data-i18n="nav.contact">Контакты</a>
+        <a href="https://github.com/sskiperr" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <div class="footer__bottom">
+        <p>© <span class="js-year">2026</span> David Margaryan. <span data-i18n="foot.rights">Все права защищены.</span></p>
+        <button class="lang-toggle" type="button">English</button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

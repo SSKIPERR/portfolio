@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Обо мне — Давид Маргарян</title>
+  <meta name="description" content="Давид Маргарян — веб-разработчик и дизайнер. Один человек — весь цикл: дизайн, код, запуск.">
+  <meta name="theme-color" content="#000000">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Обо мне — Давид Маргарян">
+  <meta property="og:description" content="Веб-разработчик и дизайнер. Один человек — весь цикл.">
+  <meta property="og:image" content="https://sskiperr.github.io/portfolio/img/david.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.replace('no-js','js');</script>
+</head>
+<body data-title-key="meta.title.about" data-desc-key="meta.desc.about">
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav nav--dark" id="navbar">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="David Margaryan — home">David Margaryan</a>
+
+      <nav class="nav__links" aria-label="Основная навигация">
+        <a href="about.html" class="nav__link current" aria-current="page" data-i18n="nav.about">Обо мне</a>
+        <a href="index.html#services" class="nav__link" data-i18n="nav.services">Услуги</a>
+        <a href="projects.html" class="nav__link" data-i18n="nav.projects">Проекты</a>
+        <a href="index.html#process" class="nav__link" data-i18n="nav.process">Подход</a>
+        <a href="contact.html" class="nav__link" data-i18n="nav.contact">Контакты</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="lang-toggle lang-toggle--short" type="button" aria-label="Switch language">EN</button>
+        <a href="contact.html" class="nav__cta" data-i18n="nav.cta">Связаться</a>
+        <button class="burger" id="burger" type="button" aria-label="Меню" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="menu" id="mobileMenu">
+    <nav class="menu__links" aria-label="Мобильное меню">
+      <a href="about.html" class="menu__link" data-i18n="nav.about">Обо мне</a>
+      <a href="index.html#services" class="menu__link" data-i18n="nav.services">Услуги</a>
+      <a href="projects.html" class="menu__link" data-i18n="nav.projects">Проекты</a>
+      <a href="index.html#process" class="menu__link" data-i18n="nav.process">Подход</a>
+      <a href="contact.html" class="menu__link" data-i18n="nav.contact">Контакты</a>
+    </nav>
+    <button class="lang-toggle menu__lang" type="button">English</button>
+  </div>
+
+  <main>
+    <!-- ===================== ABOUT HERO (dark) ===================== -->
+    <section class="ahero">
+      <div class="container ahero__head">
+        <p class="sec-label sec-label--grad" data-i18n="ab.eyebrow">Обо мне</p>
+        <h1 class="ahero__title" data-i18n="ab.title">Привет, я Давид.</h1>
+        <p class="ahero__sub" data-i18n="ab.sub">Веб-разработчик и дизайнер. Делаю сайты, которые приятно открывать — и неловко закрывать.</p>
+      </div>
+
+      <figure class="ahero__photo photo-card photo-card--dark" id="aboutPhoto">
+        <img src="img/david.jpg" alt="Давид Маргарян" class="js-photo" width="1110" height="683">
+        <div class="photo-fallback" aria-hidden="true">
+          <span class="photo-fallback__mark">DM</span>
+          <span class="photo-fallback__note" data-i18n="ui.photoSoon">Фото скоро здесь</span>
+        </div>
+        <figcaption class="photo-chip photo-chip--dark"><span aria-hidden="true">🦆</span> <span data-i18n="ab.duck">Арт-директор одобрил</span></figcaption>
+      </figure>
+
+      <div class="container">
+        <div class="ahero__facts" data-stagger>
+          <div class="afact reveal">
+            <span class="afact__t" data-i18n="ab.f1t">Удалённо</span>
+            <span class="afact__d" data-i18n="ab.f1d">работаю с любым часовым поясом</span>
+          </div>
+          <div class="afact reveal">
+            <span class="afact__t" data-i18n="ab.f2t">Сроки</span>
+            <span class="afact__d" data-i18n="ab.f2d">фиксирую заранее и соблюдаю</span>
+          </div>
+          <div class="afact reveal">
+            <span class="afact__t" data-i18n="ab.f3t">Связь</span>
+            <span class="afact__d" data-i18n="ab.f3d">на связи каждый день, с отчётами</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BIO ===================== -->
+    <section class="section">
+      <div class="container bio">
+        <div class="sec-head sec-head--left reveal">
+          <p class="sec-label" data-i18n="ab.bioLabel">Коротко</p>
+          <h2 class="sec-title" data-i18n="ab.bioTitle">О главном.</h2>
+        </div>
+        <div class="bio__text">
+          <p class="reveal" data-i18n="ab.p1">Я пришёл в веб с двух сторон сразу: со стороны кода и со стороны дизайна. Поэтому не бывает ситуации «дизайнер нарисовал — разработчик не смог»: я сам рисую и сам собираю, без потерь по дороге.</p>
+          <p class="reveal" data-i18n="ab.p2">Для меня хороший сайт — это не «красивая картинка», а продукт: он быстро открывается, понятен с первого экрана и ведёт посетителя к цели. Я одинаково серьёзно отношусь к пикселям, миллисекундам и дедлайнам.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section section--gray">
+      <div class="container-wide">
+        <div class="sec-head reveal">
+          <p class="sec-label" data-i18n="sk.label">Стек</p>
+          <h2 class="sec-title" data-i18n="sk.title">Чем я работаю.</h2>
+        </div>
+
+        <div class="skillsets" data-stagger>
+          <div class="skillset reveal">
+            <h3 class="skillset__title">Frontend</h3>
+            <ul class="chips">
+              <li>HTML5</li><li>CSS3 / SCSS</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Next.js</li><li>Tailwind CSS</li><li>Vite</li>
+            </ul>
+          </div>
+          <div class="skillset reveal">
+            <h3 class="skillset__title">Backend</h3>
+            <ul class="chips">
+              <li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>MongoDB</li><li>REST API</li><li>Firebase</li>
+            </ul>
+          </div>
+          <div class="skillset reveal">
+            <h3 class="skillset__title" data-i18n="sk.design">Дизайн</h3>
+            <ul class="chips">
+              <li>Figma</li><li data-i18n="sk.proto">Прототипирование</li><li data-i18n="sk.ds">Дизайн-системы</li><li>UI-Kit</li><li>Photoshop</li>
+            </ul>
+          </div>
+          <div class="skillset reveal">
+            <h3 class="skillset__title" data-i18n="sk.tools">Инструменты</h3>
+            <ul class="chips">
+              <li>Git / GitHub</li><li>npm / pnpm</li><li>Docker</li><li>Postman</li><li>Linux</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== STATEMENT ===================== -->
+    <section class="section statement">
+      <div class="container">
+        <h2 class="statement__title reveal" data-i18n="state.title">Хороший сайт — это скорость, ясность и деталь, доведённая до конца.</h2>
+        <p class="statement__sub reveal" data-i18n="state.sub">Поэтому каждый проект я веду сам — от первого эскиза до продакшена.</p>
+      </div>
+    </section>
+
+    <!-- ===================== CTA BAND ===================== -->
+    <section class="section section--gray cta-band">
+      <div class="container">
+        <h2 class="cta-band__title reveal" data-i18n="cta.title">Есть задача? Обсудим.</h2>
+        <p class="cta-band__sub reveal" data-i18n="cta.sub">Бриф и оценка — бесплатно. Отвечаю в течение дня.</p>
+        <div class="cta-band__actions reveal">
+          <a href="contact.html" class="btn-blue" data-i18n="ct.btn">Написать мне</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__note"><span data-i18n="foot.open">Открыт к новым проектам и сотрудничеству.</span> <span data-i18n="foot.made">Сайт сделан вручную — без шаблонов и конструкторов.</span></p>
+      <nav class="footer__nav" aria-label="Футер">
+        <a href="about.html" data-i18n="nav.about">Обо мне</a>
+        <a href="index.html#services" data-i18n="nav.services">Услуги</a>
+        <a href="projects.html" data-i18n="nav.projects">Проекты</a>
+        <a href="contact.html" data-i18n="nav.contact">Контакты</a>
+        <a href="https://github.com/sskiperr" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <div class="footer__bottom">
+        <p>© <span class="js-year">2026</span> David Margaryan. <span data-i18n="foot.rights">Все права защищены.</span></p>
+        <button class="lang-toggle" type="button">English</button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

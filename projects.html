@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Проекты — Давид Маргарян</title>
+  <meta name="description" content="Работы Давида Маргаряна: интернет-магазины, дашборды, лендинги и мобильный дизайн.">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Проекты — Давид Маргарян">
+  <meta property="og:description" content="Интернет-магазины, дашборды, лендинги и мобильный дизайн.">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.replace('no-js','js');</script>
+</head>
+<body data-title-key="meta.title.projects" data-desc-key="meta.desc.projects">
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="navbar">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="David Margaryan — home">David Margaryan</a>
+
+      <nav class="nav__links" aria-label="Основная навигация">
+        <a href="about.html" class="nav__link" data-i18n="nav.about">Обо мне</a>
+        <a href="index.html#services" class="nav__link" data-i18n="nav.services">Услуги</a>
+        <a href="projects.html" class="nav__link current" aria-current="page" data-i18n="nav.projects">Проекты</a>
+        <a href="index.html#process" class="nav__link" data-i18n="nav.process">Подход</a>
+        <a href="contact.html" class="nav__link" data-i18n="nav.contact">Контакты</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="lang-toggle lang-toggle--short" type="button" aria-label="Switch language">EN</button>
+        <a href="contact.html" class="nav__cta" data-i18n="nav.cta">Связаться</a>
+        <button class="burger" id="burger" type="button" aria-label="Меню" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="menu" id="mobileMenu">
+    <nav class="menu__links" aria-label="Мобильное меню">
+      <a href="about.html" class="menu__link" data-i18n="nav.about">Обо мне</a>
+      <a href="index.html#services" class="menu__link" data-i18n="nav.services">Услуги</a>
+      <a href="projects.html" class="menu__link" data-i18n="nav.projects">Проекты</a>
+      <a href="index.html#process" class="menu__link" data-i18n="nav.process">Подход</a>
+      <a href="contact.html" class="menu__link" data-i18n="nav.contact">Контакты</a>
+    </nav>
+    <button class="lang-toggle menu__lang" type="button">English</button>
+  </div>
+
+  <main>
+    <!-- ===================== PAGE HEAD ===================== -->
+    <section class="phead">
+      <p class="sec-label" data-i18n="pj.label">Проекты</p>
+      <h1 class="phead__title" data-i18n="pj.title">Работы.</h1>
+      <p class="phead__sub" data-i18n="proj.sub">Пока это концепты: они показывают уровень и подход. Место для вашего проекта уже готово.</p>
+    </section>
+
+    <!-- ===================== FEATURES ===================== -->
+    <section class="section section--tight">
+      <div class="container-wide">
+
+        <!-- 1. Aurora Store -->
+        <article class="feature reveal">
+          <div class="feature__text">
+            <p class="card__kind" data-i18n="p1.kind">Интернет-магазин</p>
+            <h2 class="feature__title">Aurora Store <span class="feature__badge" data-i18n="proj.concept">Концепт</span></h2>
+            <p class="feature__desc" data-i18n="p1.desc">Каталог, корзина, оплата и админ-панель.</p>
+            <ul class="feature__list">
+              <li data-i18n="p1.li1">Каталог с фильтрами и поиском</li>
+              <li data-i18n="p1.li2">Корзина и онлайн-оплата (Stripe)</li>
+              <li data-i18n="p1.li3">Админ-панель для товаров и заказов</li>
+            </ul>
+            <p class="card__tech">React · Node.js · Stripe</p>
+          </div>
+          <div class="feature__stage" aria-hidden="true">
+            <div class="miniwin miniwin--page">
+              <div class="miniwin__bar"><i></i><i></i><i></i></div>
+              <div class="miniwin__body">
+                <div class="mv-nav"></div>
+                <div class="mv-banner mv-banner--blue"></div>
+                <div class="mv-row"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Pulse -->
+        <article class="feature feature--flip reveal">
+          <div class="feature__text">
+            <p class="card__kind" data-i18n="p2.kind">SaaS-аналитика</p>
+            <h2 class="feature__title">Pulse Analytics <span class="feature__badge" data-i18n="proj.concept">Концепт</span></h2>
+            <p class="feature__desc" data-i18n="p2.desc">Графики в реальном времени, отчёты и команды.</p>
+            <ul class="feature__list">
+              <li data-i18n="p2.li1">Живые графики и метрики</li>
+              <li data-i18n="p2.li2">Отчёты и экспорт в CSV</li>
+              <li data-i18n="p2.li3">Роли и командный доступ</li>
+            </ul>
+            <p class="card__tech">Next.js · TypeScript · PostgreSQL</p>
+          </div>
+          <div class="feature__stage" aria-hidden="true">
+            <div class="miniwin miniwin--page">
+              <div class="miniwin__bar"><i></i><i></i><i></i></div>
+              <div class="miniwin__body miniwin__body--row">
+                <div class="mv-side"></div>
+                <div class="mv-chart"><u style="--h:38%"></u><u style="--h:66%"></u><u style="--h:50%"></u><u style="--h:86%"></u><u style="--h:60%"></u><u style="--h:72%"></u></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Brew & Beans -->
+        <article class="feature reveal">
+          <div class="feature__text">
+            <p class="card__kind" data-i18n="p3.kind">Лендинг</p>
+            <h2 class="feature__title">Brew &amp; Beans <span class="feature__badge" data-i18n="proj.concept">Концепт</span></h2>
+            <p class="feature__desc" data-i18n="p3.desc">Кофейная сеть: меню, карта, бронь столиков.</p>
+            <ul class="feature__list">
+              <li data-i18n="p3.li1">Анимации появления при скролле</li>
+              <li data-i18n="p3.li2">Интерактивное меню и карта</li>
+              <li data-i18n="p3.li3">Форма брони столика</li>
+            </ul>
+            <p class="card__tech">HTML · SCSS · GSAP</p>
+          </div>
+          <div class="feature__stage" aria-hidden="true">
+            <div class="miniwin miniwin--page">
+              <div class="miniwin__bar"><i></i><i></i><i></i></div>
+              <div class="miniwin__body miniwin__body--center">
+                <span class="mv-circle"></span>
+                <div class="mv-line" style="width:58%"></div>
+                <div class="mv-line mv-line--light" style="width:38%"></div>
+                <div class="mv-pill mv-pill--warm"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. TaskFlow -->
+        <article class="feature feature--flip reveal">
+          <div class="feature__text">
+            <p class="card__kind" data-i18n="p4.kind">Командный канбан</p>
+            <h2 class="feature__title">TaskFlow <span class="feature__badge" data-i18n="proj.concept">Концепт</span></h2>
+            <p class="feature__desc" data-i18n="p4.desc">Доски, дедлайны и совместная работа.</p>
+            <ul class="feature__list">
+              <li data-i18n="p4.li1">Доски и колонки с drag-and-drop</li>
+              <li data-i18n="p4.li2">Дедлайны и уведомления</li>
+              <li data-i18n="p4.li3">Совместная работа в реальном времени</li>
+            </ul>
+            <p class="card__tech">React · Express · MongoDB</p>
+          </div>
+          <div class="feature__stage" aria-hidden="true">
+            <div class="miniwin miniwin--page">
+              <div class="miniwin__bar"><i></i><i></i><i></i></div>
+              <div class="miniwin__body miniwin__body--row">
+                <div class="mv-col"><i></i><i></i><i class="is-accent"></i></div>
+                <div class="mv-col"><i class="is-accent"></i><i></i></div>
+                <div class="mv-col"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Fitly -->
+        <article class="feature reveal">
+          <div class="feature__text">
+            <p class="card__kind" data-i18n="p5.kind">Мобильный дизайн</p>
+            <h2 class="feature__title">Fitly <span class="feature__badge" data-i18n="proj.concept">Концепт</span></h2>
+            <p class="feature__desc" data-i18n="p5.desc">40+ экранов, дизайн-система, прототип в Figma.</p>
+            <ul class="feature__list">
+              <li data-i18n="p5.li1">40+ экранов под iOS</li>
+              <li data-i18n="p5.li2">Дизайн-система и UI-кит</li>
+              <li data-i18n="p5.li3">Кликабельный прототип в Figma</li>
+            </ul>
+            <p class="card__tech">Figma · UI-Kit · Prototype</p>
+          </div>
+          <div class="feature__stage" aria-hidden="true">
+            <div class="phone phone--page">
+              <span class="phone__notch"></span>
+              <div class="phone__screen">
+                <div class="mv-line" style="width:54%"></div>
+                <span class="phone__ring"></span>
+                <div class="phone__dots"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Estate One -->
+        <article class="feature feature--flip reveal">
+          <div class="feature__text">
+            <p class="card__kind" data-i18n="p6.kind">Недвижимость</p>
+            <h2 class="feature__title">Estate One <span class="feature__badge" data-i18n="proj.concept">Концепт</span></h2>
+            <p class="feature__desc" data-i18n="p6.desc">Каталог объектов, умные фильтры, заявки.</p>
+            <ul class="feature__list">
+              <li data-i18n="p6.li1">Каталог с умными фильтрами</li>
+              <li data-i18n="p6.li2">Карта объектов (Maps API)</li>
+              <li data-i18n="p6.li3">Формы заявок с валидацией</li>
+            </ul>
+            <p class="card__tech">Next.js · Tailwind · Maps API</p>
+          </div>
+          <div class="feature__stage" aria-hidden="true">
+            <div class="miniwin miniwin--page">
+              <div class="miniwin__bar"><i></i><i></i><i></i></div>
+              <div class="miniwin__body">
+                <div class="mv-search"></div>
+                <div class="mv-row mv-row--cards"><span><i></i><b></b></span><span><i></i><b></b></span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===================== CTA BAND ===================== -->
+    <section class="section section--gray cta-band">
+      <div class="container">
+        <h2 class="cta-band__title reveal" data-i18n="cta.proj">Здесь не хватает вашего проекта.</h2>
+        <p class="cta-band__sub reveal" data-i18n="cta.sub">Бриф и оценка — бесплатно. Отвечаю в течение дня.</p>
+        <div class="cta-band__actions reveal">
+          <a href="contact.html" class="btn-blue" data-i18n="ct.btn">Написать мне</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__note"><span data-i18n="foot.open">Открыт к новым проектам и сотрудничеству.</span> <span data-i18n="foot.made">Сайт сделан вручную — без шаблонов и конструкторов.</span></p>
+      <nav class="footer__nav" aria-label="Футер">
+        <a href="about.html" data-i18n="nav.about">Обо мне</a>
+        <a href="index.html#services" data-i18n="nav.services">Услуги</a>
+        <a href="projects.html" data-i18n="nav.projects">Проекты</a>
+        <a href="contact.html" data-i18n="nav.contact">Контакты</a>
+        <a href="https://github.com/sskiperr" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <div class="footer__bottom">
+        <p>© <span class="js-year">2026</span> David Margaryan. <span data-i18n="foot.rights">Все права защищены.</span></p>
+        <button class="lang-toggle" type="button">English</button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
