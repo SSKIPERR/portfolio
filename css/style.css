@@ -8,6 +8,7 @@
   --bg: #ffffff;
   --bg-gray: #f5f5f7;
   --bg-dark: #000000;
+  --panel: #ffffff;
 
   --text: #1d1d1f;
   --text-2: #6e6e73;
@@ -163,7 +164,7 @@ body.lock {
 .lang-toggle--short {
   font-size: 12px;
   font-weight: 500;
-  color: rgba(0, 0, 0, 0.72);
+  color: var(--text-2);
   padding: 5px 10px;
   border: 1px solid var(--hairline);
   border-radius: 980px;
@@ -563,7 +564,7 @@ body.menu-open .menu__link:nth-child(4) { transition-delay: 0.2s; }
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background: #fff;
+  background: var(--panel);
   border-radius: var(--r-tile);
   padding: 48px 36px 0;
   overflow: hidden;
@@ -1793,7 +1794,7 @@ body {
 }
 
 .skillset {
-  background: #fff;
+  background: var(--panel);
   border-radius: 24px;
   padding: 30px 32px;
 }
@@ -2120,6 +2121,405 @@ body {
   .steps--three {
     grid-template-columns: 1fr;
   }
+}
+
+/* ============================================================
+   Dark theme, spotlight search, easter egg, new mockups
+   ============================================================ */
+
+/* Mockups always read as light-app screenshots, even in dark theme */
+.win,
+.miniwin,
+.phone,
+.layers,
+.dash,
+.frames {
+  --bg-gray: #f5f5f7;
+  --hairline: #d2d2d7;
+  --hairline-soft: #e8e8ed;
+  --panel: #ffffff;
+  --text: #1d1d1f;
+  --text-2: #6e6e73;
+  --text-3: #86868b;
+  --blue: #0071e3;
+}
+
+/* ---------- Dark theme tokens ---------- */
+html[data-theme="dark"] {
+  --bg: #000000;
+  --bg-gray: #161617;
+  --panel: #1d1d1f;
+  --text: #f5f5f7;
+  --text-2: #a1a1a6;
+  --text-3: #86868b;
+  --blue: #0a84ff;
+  --blue-hover: #2997ff;
+  --link: #2997ff;
+  --hairline: #424245;
+  --hairline-soft: #2d2d2f;
+}
+
+html[data-theme="dark"] body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+html[data-theme="dark"] .nav {
+  background: rgba(18, 18, 20, 0.8);
+}
+
+html[data-theme="dark"] .nav.scrolled {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+html[data-theme="dark"] .nav__link {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+html[data-theme="dark"] .nav__link:hover,
+html[data-theme="dark"] .nav__link.current {
+  color: #fff;
+}
+
+html[data-theme="dark"] .menu {
+  background: rgba(0, 0, 0, 0.94);
+}
+
+html[data-theme="dark"] .toast {
+  background: rgba(28, 28, 30, 0.95);
+  border-color: var(--hairline-soft);
+}
+
+html[data-theme="dark"] .step__num {
+  color: #48484a;
+}
+
+html[data-theme="dark"] .mv-line {
+  background: #c7c7cc;
+}
+
+html[data-theme="dark"] .card__badge,
+html[data-theme="dark"] .feature__badge {
+  background: rgba(29, 29, 31, 0.8);
+  border-color: var(--hairline-soft);
+  color: var(--text-2);
+}
+
+html[data-theme="dark"] ::selection {
+  background: rgba(10, 132, 255, 0.35);
+}
+
+/* ---------- Icon buttons (search / theme) ---------- */
+.icon-btn {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: var(--text-2);
+  transition: color var(--tr), background var(--tr);
+}
+
+.icon-btn:hover {
+  color: var(--text);
+  background: var(--bg-gray);
+}
+
+.icon-btn svg {
+  width: 17px;
+  height: 17px;
+}
+
+.icon-btn .ico-moon { display: none; }
+.icon-btn .ico-sun  { display: block; }
+
+html[data-theme="dark"] .icon-btn .ico-moon { display: block; }
+html[data-theme="dark"] .icon-btn .ico-sun  { display: none; }
+
+/* ---------- Spotlight search ---------- */
+.spot {
+  position: fixed;
+  inset: 0;
+  z-index: 140;
+  display: none;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.spot.open {
+  display: block;
+}
+
+.spot__panel {
+  width: min(560px, calc(100vw - 32px));
+  margin: 12vh auto 0;
+  background: var(--panel);
+  border: 1px solid var(--hairline-soft);
+  border-radius: 18px;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  animation: spotIn 0.25s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+
+@keyframes spotIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.spot__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 18px;
+}
+
+.spot__head svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  color: var(--text-3);
+}
+
+.spot__input {
+  flex: 1;
+  padding: 17px 0;
+  font: inherit;
+  font-size: 17px;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.spot__input::placeholder {
+  color: var(--text-3);
+}
+
+.spot__kbd {
+  flex: none;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-3);
+  border: 1px solid var(--hairline-soft);
+  border-radius: 6px;
+  padding: 3px 7px;
+}
+
+.spot__list {
+  max-height: 320px;
+  overflow-y: auto;
+  border-top: 1px solid var(--hairline-soft);
+  padding: 8px;
+}
+
+.spot__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.spot__item.sel {
+  background: var(--bg-gray);
+}
+
+.spot__item-kind {
+  flex: none;
+  font-size: 12.5px;
+  color: var(--text-3);
+}
+
+.spot__empty {
+  padding: 22px 20px;
+  font-size: 15px;
+  color: var(--text-2);
+  text-align: center;
+}
+
+/* ---------- Duck easter egg ---------- */
+.photo-chip {
+  cursor: pointer;
+  transition: transform var(--tr);
+}
+
+.photo-chip:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+.duck-run {
+  position: fixed;
+  bottom: 4vh;
+  left: -80px;
+  z-index: 150;
+  font-size: 44px;
+  pointer-events: none;
+  animation: duckWalk 5s linear forwards;
+}
+
+@keyframes duckWalk {
+  0% {
+    left: -80px;
+    transform: scaleX(-1) rotate(0deg);
+  }
+  10% { transform: scaleX(-1) rotate(-7deg); }
+  20% { transform: scaleX(-1) rotate(7deg); }
+  30% { transform: scaleX(-1) rotate(-7deg); }
+  40% { transform: scaleX(-1) rotate(7deg); }
+  50% { transform: scaleX(-1) rotate(-7deg); }
+  60% { transform: scaleX(-1) rotate(7deg); }
+  70% { transform: scaleX(-1) rotate(-7deg); }
+  80% { transform: scaleX(-1) rotate(7deg); }
+  90% { transform: scaleX(-1) rotate(-7deg); }
+  100% {
+    left: calc(100vw + 80px);
+    transform: scaleX(-1) rotate(0deg);
+  }
+}
+
+/* ---------- New mockups ---------- */
+/* Lumo: masonry gallery */
+.mock-gallery {
+  display: flex;
+  gap: 8px;
+  height: 100%;
+}
+
+.mock-gallery .mg-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mock-gallery .mg-col i {
+  border-radius: 7px;
+  background: linear-gradient(140deg, #e8e8ed, #d8d8de);
+}
+
+.mock-gallery .mg-col i.mg-warm {
+  background: linear-gradient(140deg, rgba(255, 159, 10, 0.35), rgba(255, 105, 0, 0.2));
+}
+
+.mock-gallery .mg-col i.mg-cool {
+  background: linear-gradient(140deg, rgba(0, 113, 227, 0.3), rgba(100, 210, 255, 0.22));
+}
+
+.mock-gallery .mg-col i:nth-child(1) { height: 44%; }
+.mock-gallery .mg-col i:nth-child(2) { height: 28%; }
+.mock-gallery .mg-col i:nth-child(3) { flex: 1; }
+
+.mock-gallery .mg-col--b i:nth-child(1) { height: 26%; }
+.mock-gallery .mg-col--b i:nth-child(2) { height: 46%; }
+
+/* Orbit: CRM table */
+.mock-crm {
+  display: flex;
+  gap: 10px;
+  height: 100%;
+}
+
+.mock-crm .mc-table {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mock-crm .mc-row {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  border-radius: 8px;
+  background: var(--bg-gray);
+  border: 1px solid var(--hairline-soft);
+}
+
+.mock-crm .mc-row i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: none;
+  background: var(--hairline);
+}
+
+.mock-crm .mc-row.is-won i { background: #30d158; }
+.mock-crm .mc-row.is-hot i { background: #0071e3; }
+
+.mock-crm .mc-row b {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--hairline-soft);
+}
+
+.mock-crm .mc-row b:nth-of-type(1) { width: 34%; }
+.mock-crm .mc-row b:nth-of-type(2) { width: 18%; margin-left: auto; }
+
+.mock-crm .mc-side {
+  flex: 0.6;
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  padding: 10px;
+  border-radius: 8px;
+  background: var(--bg-gray);
+  border: 1px solid var(--hairline-soft);
+}
+
+.mock-crm .mc-side u {
+  flex: 1;
+  height: var(--h, 50%);
+  border-radius: 3px 3px 0 0;
+  background: linear-gradient(180deg, #0071e3, rgba(0, 113, 227, 0.4));
+}
+
+/* Wave: dark phone */
+.phone--dark .phone__screen {
+  background: #1c1c1e;
+  border-color: #2d2d2f;
+  gap: 10px;
+}
+
+.phone--dark .pw-art {
+  width: 62px;
+  height: 62px;
+  border-radius: 12px;
+  background: linear-gradient(140deg, #a972ff, #2997ff);
+}
+
+.phone--dark .pw-wave {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 20px;
+}
+
+.phone--dark .pw-wave i {
+  width: 3.5px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.75);
+  height: var(--h, 50%);
+}
+
+.phone--dark .pw-play {
+  width: 60px;
+  height: 20px;
+  border-radius: 980px;
+  background: #0a84ff;
 }
 
 /* ---------- Reduced motion ---------- */

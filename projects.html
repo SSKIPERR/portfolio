@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
-  <script>document.documentElement.classList.replace('no-js','js');</script>
+  <script>document.documentElement.classList.replace('no-js','js');try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
 <body data-title-key="meta.title.projects" data-desc-key="meta.desc.projects">
 
@@ -36,6 +36,13 @@
       </nav>
 
       <div class="nav__actions">
+        <button class="icon-btn js-spot-open" type="button" aria-label="Поиск / Search (Ctrl+K)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+        <button class="icon-btn js-theme" type="button" aria-label="Тема / Theme">
+          <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M19.1 4.9l-1.6 1.6M6.5 17.5l-1.6 1.6"/></svg>
+          <svg class="ico-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.6 14.6A8.6 8.6 0 0 1 9.4 3.4a8.6 8.6 0 1 0 11.2 11.2z"/></svg>
+        </button>
         <button class="lang-toggle lang-toggle--short" type="button" aria-label="Switch language">EN</button>
         <a href="contact.html" class="nav__cta" data-i18n="nav.cta">Связаться</a>
         <button class="burger" id="burger" type="button" aria-label="Меню" aria-expanded="false">
@@ -213,6 +220,89 @@
               <div class="miniwin__body">
                 <div class="mv-search"></div>
                 <div class="mv-row mv-row--cards"><span><i></i><b></b></span><span><i></i><b></b></span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Lumo -->
+        <article class="feature reveal" id="lumo">
+          <div class="feature__text">
+            <p class="card__kind" data-i18n="p7.kind">Сайт-портфолио</p>
+            <h2 class="feature__title">Lumo <span class="feature__badge" data-i18n="proj.concept">Концепт</span></h2>
+            <p class="feature__desc" data-i18n="p7.desc">Минималистичный сайт фотографа: галерея, альбомы и приём заявок на съёмку.</p>
+            <ul class="feature__list">
+              <li data-i18n="p7.li1">Masonry-галерея с лайтбоксом</li>
+              <li data-i18n="p7.li2">Альбомы и фильтры по жанрам</li>
+              <li data-i18n="p7.li3">Форма бронирования съёмки</li>
+            </ul>
+            <p class="card__tech">Next.js · Sanity CMS · Framer Motion</p>
+          </div>
+          <div class="feature__stage" aria-hidden="true">
+            <div class="miniwin miniwin--page">
+              <div class="miniwin__bar"><i></i><i></i><i></i></div>
+              <div class="miniwin__body">
+                <div class="mock-gallery">
+                  <div class="mg-col"><i class="mg-warm"></i><i></i><i></i></div>
+                  <div class="mg-col mg-col--b"><i></i><i class="mg-cool"></i><i></i></div>
+                  <div class="mg-col"><i></i><i class="mg-warm"></i><i></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Orbit CRM -->
+        <article class="feature feature--flip reveal" id="orbit">
+          <div class="feature__text">
+            <p class="card__kind" data-i18n="p8.kind">CRM-система</p>
+            <h2 class="feature__title">Orbit CRM <span class="feature__badge" data-i18n="proj.concept">Концепт</span></h2>
+            <p class="feature__desc" data-i18n="p8.desc">Панель для отдела продаж: сделки, клиенты и отчёты в одном окне.</p>
+            <ul class="feature__list">
+              <li data-i18n="p8.li1">Канбан сделок и статусы</li>
+              <li data-i18n="p8.li2">Карточки клиентов с историей</li>
+              <li data-i18n="p8.li3">Отчёты и график выручки</li>
+            </ul>
+            <p class="card__tech">React · NestJS · PostgreSQL</p>
+          </div>
+          <div class="feature__stage" aria-hidden="true">
+            <div class="miniwin miniwin--page">
+              <div class="miniwin__bar"><i></i><i></i><i></i></div>
+              <div class="miniwin__body">
+                <div class="mock-crm">
+                  <div class="mc-table">
+                    <div class="mc-row is-hot"><i></i><b></b><b></b></div>
+                    <div class="mc-row is-won"><i></i><b></b><b></b></div>
+                    <div class="mc-row"><i></i><b></b><b></b></div>
+                    <div class="mc-row is-won"><i></i><b></b><b></b></div>
+                  </div>
+                  <div class="mc-side"><u style="--h:35%"></u><u style="--h:58%"></u><u style="--h:80%"></u><u style="--h:64%"></u></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9. Wave -->
+        <article class="feature reveal" id="wave">
+          <div class="feature__text">
+            <p class="card__kind" data-i18n="p9.kind">Дизайн приложения</p>
+            <h2 class="feature__title">Wave <span class="feature__badge" data-i18n="proj.concept">Концепт</span></h2>
+            <p class="feature__desc" data-i18n="p9.desc">Музыкальный плеер: тёмная тема, живые обложки и управление жестами.</p>
+            <ul class="feature__list">
+              <li data-i18n="p9.li1">30+ экранов в тёмной теме</li>
+              <li data-i18n="p9.li2">Анимации обложек и жесты</li>
+              <li data-i18n="p9.li3">Прототип с микровзаимодействиями</li>
+            </ul>
+            <p class="card__tech">Figma · Prototype · Lottie</p>
+          </div>
+          <div class="feature__stage" aria-hidden="true">
+            <div class="phone phone--page phone--dark">
+              <span class="phone__notch"></span>
+              <div class="phone__screen">
+                <span class="pw-art"></span>
+                <span class="pw-wave"><i style="--h:35%"></i><i style="--h:70%"></i><i style="--h:100%"></i><i style="--h:55%"></i><i style="--h:85%"></i><i style="--h:40%"></i><i style="--h:65%"></i></span>
+                <span class="pw-play"></span>
               </div>
             </div>
           </div>

@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
-  <script>document.documentElement.classList.replace('no-js','js');</script>
+  <script>document.documentElement.classList.replace('no-js','js');try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
 <body data-title-key="meta.title.contact" data-desc-key="meta.desc.contact">
 
@@ -36,6 +36,13 @@
       </nav>
 
       <div class="nav__actions">
+        <button class="icon-btn js-spot-open" type="button" aria-label="Поиск / Search (Ctrl+K)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+        <button class="icon-btn js-theme" type="button" aria-label="Тема / Theme">
+          <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M19.1 4.9l-1.6 1.6M6.5 17.5l-1.6 1.6"/></svg>
+          <svg class="ico-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.6 14.6A8.6 8.6 0 0 1 9.4 3.4a8.6 8.6 0 1 0 11.2 11.2z"/></svg>
+        </button>
         <button class="lang-toggle lang-toggle--short" type="button" aria-label="Switch language">EN</button>
         <a href="contact.html" class="nav__cta" data-i18n="nav.cta">Связаться</a>
         <button class="burger" id="burger" type="button" aria-label="Меню" aria-expanded="false">

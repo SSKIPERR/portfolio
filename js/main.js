@@ -95,6 +95,21 @@
       'p6.li1': 'Каталог с умными фильтрами',
       'p6.li2': 'Карта объектов (Maps API)',
       'p6.li3': 'Формы заявок с валидацией',
+      'p7.kind': 'Сайт-портфолио',
+      'p7.desc': 'Минималистичный сайт фотографа: галерея, альбомы и приём заявок на съёмку.',
+      'p7.li1': 'Masonry-галерея с лайтбоксом',
+      'p7.li2': 'Альбомы и фильтры по жанрам',
+      'p7.li3': 'Форма бронирования съёмки',
+      'p8.kind': 'CRM-система',
+      'p8.desc': 'Панель для отдела продаж: сделки, клиенты и отчёты в одном окне.',
+      'p8.li1': 'Канбан сделок и статусы',
+      'p8.li2': 'Карточки клиентов с историей',
+      'p8.li3': 'Отчёты и график выручки',
+      'p9.kind': 'Дизайн приложения',
+      'p9.desc': 'Музыкальный плеер: тёмная тема, живые обложки и управление жестами.',
+      'p9.li1': '30+ экранов в тёмной теме',
+      'p9.li2': 'Анимации обложек и жесты',
+      'p9.li3': 'Прототип с микровзаимодействиями',
 
       'pr.label': 'Процесс',
       'pr.title': 'Как идёт работа.',
@@ -180,7 +195,14 @@
       'foot.rights': 'Все права защищены.',
 
       'toast.copied': 'Email скопирован.',
-      'toast.copyFail': 'Не получилось скопировать — выделите адрес вручную.'
+      'toast.copyFail': 'Не получилось скопировать — выделите адрес вручную.',
+
+      'spot.ph': 'Поиск по сайту…',
+      'spot.empty': 'Ничего не нашлось',
+      'spot.home': 'Главная',
+      'spot.page': 'Страница',
+      'spot.section': 'Раздел',
+      'duck.toast': 'Кря! Одобрено. 🦆'
     },
 
     en: {
@@ -266,6 +288,21 @@
       'p6.li1': 'Catalog with smart filters',
       'p6.li2': 'Property map (Maps API)',
       'p6.li3': 'Lead forms with validation',
+      'p7.kind': 'Portfolio website',
+      'p7.desc': 'Minimal photographer site: gallery, albums and shoot booking.',
+      'p7.li1': 'Masonry gallery with a lightbox',
+      'p7.li2': 'Albums and genre filters',
+      'p7.li3': 'Shoot booking form',
+      'p8.kind': 'CRM system',
+      'p8.desc': 'Sales team panel: deals, clients and reports in one place.',
+      'p8.li1': 'Deal kanban and stages',
+      'p8.li2': 'Client cards with history',
+      'p8.li3': 'Reports and a revenue chart',
+      'p9.kind': 'App design',
+      'p9.desc': 'Music player: dark theme, living artwork and gesture controls.',
+      'p9.li1': '30+ dark-theme screens',
+      'p9.li2': 'Artwork animations and gestures',
+      'p9.li3': 'Prototype with micro-interactions',
 
       'pr.label': 'Process',
       'pr.title': 'How the work goes.',
@@ -351,7 +388,14 @@
       'foot.rights': 'All rights reserved.',
 
       'toast.copied': 'Email copied.',
-      'toast.copyFail': 'Couldn’t copy — please select the address manually.'
+      'toast.copyFail': 'Couldn’t copy — please select the address manually.',
+
+      'spot.ph': 'Search the site…',
+      'spot.empty': 'Nothing found',
+      'spot.home': 'Home',
+      'spot.page': 'Page',
+      'spot.section': 'Section',
+      'duck.toast': 'Quack! Approved. 🦆'
     }
   };
 
@@ -549,6 +593,160 @@
       }
     });
   }
+
+  /* ---------------- Theme toggle ---------------- */
+  var themeMeta = $('meta[name="theme-color"]');
+
+  function syncThemeMeta() {
+    if (themeMeta) {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      themeMeta.setAttribute('content', dark ? '#000000' : '#ffffff');
+    }
+  }
+
+  syncThemeMeta();
+
+  $$('.js-theme').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) { /* private mode */ }
+      syncThemeMeta();
+    });
+  });
+
+  /* ---------------- Spotlight search (Cmd/Ctrl+K) ---------------- */
+  var spot = document.createElement('div');
+  spot.className = 'spot';
+  spot.innerHTML =
+    '<div class="spot__panel" role="dialog" aria-modal="true" aria-label="Поиск">' +
+      '<div class="spot__head">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>' +
+        '<input class="spot__input" type="text" autocomplete="off" spellcheck="false">' +
+        '<span class="spot__kbd">esc</span>' +
+      '</div>' +
+      '<div class="spot__list"></div>' +
+    '</div>';
+  document.body.appendChild(spot);
+
+  var spotInput = $('.spot__input', spot);
+  var spotList = $('.spot__list', spot);
+  var spotItems = [];
+  var spotSel = 0;
+
+  function spotIndex() {
+    var d = I18N[lang];
+    var items = [
+      { label: d['spot.home'], kind: d['spot.page'], href: 'index.html' },
+      { label: d['nav.about'], kind: d['spot.page'], href: 'about.html' },
+      { label: d['nav.projects'], kind: d['spot.page'], href: 'projects.html' },
+      { label: d['nav.contact'], kind: d['spot.page'], href: 'contact.html' },
+      { label: d['nav.services'], kind: d['spot.section'], href: 'index.html#services' },
+      { label: d['nav.process'], kind: d['spot.section'], href: 'index.html#process' },
+      { label: 'FAQ', kind: d['spot.section'], href: 'contact.html' }
+    ];
+    [
+      ['Aurora Store', 'p1.kind'], ['Pulse Analytics', 'p2.kind'], ['Brew & Beans', 'p3.kind'],
+      ['TaskFlow', 'p4.kind'], ['Fitly', 'p5.kind'], ['Estate One', 'p6.kind'],
+      ['Lumo', 'p7.kind'], ['Orbit CRM', 'p8.kind'], ['Wave', 'p9.kind']
+    ].forEach(function (p) {
+      items.push({ label: p[0], kind: d[p[1]], href: 'projects.html' });
+    });
+    return items;
+  }
+
+  function spotRender(q) {
+    var all = spotIndex();
+    q = (q || '').trim().toLowerCase();
+    spotItems = q ? all.filter(function (it) {
+      return (it.label + ' ' + it.kind).toLowerCase().indexOf(q) !== -1;
+    }) : all;
+    if (spotSel >= spotItems.length) spotSel = 0;
+    if (!spotItems.length) {
+      spotList.innerHTML = '<div class="spot__empty">' + I18N[lang]['spot.empty'] + '</div>';
+      return;
+    }
+    spotList.innerHTML = spotItems.map(function (it, i) {
+      return '<div class="spot__item' + (i === spotSel ? ' sel' : '') + '" data-href="' + it.href + '">' +
+        '<span>' + it.label + '</span><span class="spot__item-kind">' + it.kind + '</span></div>';
+    }).join('');
+    var sel = $('.spot__item.sel', spotList);
+    if (sel && sel.scrollIntoView) sel.scrollIntoView({ block: 'nearest' });
+  }
+
+  function spotOpen() {
+    spotSel = 0;
+    spotInput.value = '';
+    spotInput.setAttribute('placeholder', I18N[lang]['spot.ph']);
+    spot.classList.add('open');
+    document.body.classList.add('lock');
+    spotRender('');
+    setTimeout(function () { spotInput.focus(); }, 30);
+  }
+
+  function spotClose() {
+    spot.classList.remove('open');
+    document.body.classList.remove('lock');
+  }
+
+  $$('.js-spot-open').forEach(function (btn) {
+    btn.addEventListener('click', spotOpen);
+  });
+
+  spot.addEventListener('click', function (e) {
+    if (e.target === spot) spotClose();
+  });
+
+  spotList.addEventListener('click', function (e) {
+    var item = e.target.closest ? e.target.closest('.spot__item') : null;
+    if (item) window.location.href = item.getAttribute('data-href');
+  });
+
+  spotInput.addEventListener('input', function () {
+    spotSel = 0;
+    spotRender(spotInput.value);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')) {
+      e.preventDefault();
+      if (spot.classList.contains('open')) { spotClose(); } else { spotOpen(); }
+      return;
+    }
+    if (!spot.classList.contains('open')) return;
+    if (e.key === 'Escape') {
+      spotClose();
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      spotSel = Math.min(spotSel + 1, spotItems.length - 1);
+      spotRender(spotInput.value);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      spotSel = Math.max(spotSel - 1, 0);
+      spotRender(spotInput.value);
+    } else if (e.key === 'Enter') {
+      if (spotItems[spotSel]) window.location.href = spotItems[spotSel].href;
+    }
+  });
+
+  /* ---------------- Duck easter egg ---------------- */
+  var duckBusy = false;
+  $$('.photo-chip').forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      showToast('duck.toast');
+      if (duckBusy || prefersReduced) return;
+      duckBusy = true;
+      var duck = document.createElement('div');
+      duck.className = 'duck-run';
+      duck.textContent = '🦆';
+      duck.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(duck);
+      duck.addEventListener('animationend', function () {
+        duck.remove();
+        duckBusy = false;
+      });
+    });
+  });
 
   /* ---------------- Misc ---------------- */
   $$('.js-year').forEach(function (el) {
